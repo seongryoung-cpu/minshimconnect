@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#2ed5c4">
+    <title>민심잇다 - 당신의 의견이 정책이 됩니다</title>
+    <meta name="description" content="시민의 정치 참여 데이터를 실시간으로 수집하고 시각화하는 플랫폼. 정치 성향 테스트와 지역구 지표를 제공합니다.">
+    <meta property="og:title" content="민심잇다">
+    <meta property="og:description" content="우리 동네 민심, 실시간 확인. 당신의 의견이 데이터가 됩니다.">
+    <meta name="format-detection" content="telephone=no">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Pretendard', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#2ed5c4', // Teal Main
+                foreground: '#002b49', 
+                hover: '#20b2a3', 
+                light: '#e0fbf8',
+                dark: '#1fa89a',
+              },
+              secondary: {
+                DEFAULT: '#002b49', // Navy Main
+                foreground: '#ffffff',
+                light: '#0f4c75',
+                100: '#e6eaee', 
+              }
+            },
+            animation: {
+              'stamp-in': 'stampIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+              'pulse-subtle': 'pulseSubtle 2s infinite',
+              'slide-up': 'slideUp 0.4s ease-out forwards',
+            },
+            keyframes: {
+              stampIn: {
+                '0%': { transform: 'scale(2) rotate(-15deg)', opacity: '0' },
+                '100%': { transform: 'scale(1) rotate(0deg)', opacity: '1' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { transform: 'translateY(15px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(100%)' },
+                '100%': { transform: 'translateY(0)' },
+              },
+              pulseSubtle: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0.8' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --sat: env(safe-area-inset-top);
+        --sab: env(safe-area-inset-bottom);
+      }
+      
+      body {
+        font-family: 'Pretendard', sans-serif;
+        background-color: #f8fafc;
+        background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+        background-size: 24px 24px;
+        color: #1e293b;
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior-y: none; /* Prevent rubber-banding on body */
+      }
+      
+      /* Hide scrollbar but keep functionality */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none; 
+          scrollbar-width: none; 
+      }
+      
+      .pb-safe {
+        padding-bottom: var(--sab);
+      }
+      
+      .pt-safe {
+        padding-top: var(--sat);
+      }
+
+      /* Better focus styles for accessibility */
+      *:focus-visible {
+        outline: 2px solid #2ed5c4;
+        outline-offset: 2px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "recharts": "https://esm.sh/recharts@^3.5.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

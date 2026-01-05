@@ -1,0 +1,5 @@
+{
+  "name": "민심잇다 (Minshim Itda)",
+  "description": "시민의 정치 참여 데이터를 실시간으로 수집하고 시각화하는 플랫폼. 정치 성향 테스트와 지역구 지표를 제공합니다.",
+  "requestFramePermissions": []
+}

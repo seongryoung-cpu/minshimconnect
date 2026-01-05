@@ -1,0 +1,96 @@
+/* Mobile-first responsive styles */
+
+/* Base mobile styles */
+* {
+  -webkit-tap-highlight-color: rgba(46, 213, 196, 0.2);
+  -webkit-touch-callout: none;
+}
+
+/* Touch-friendly button sizes (minimum 44x44px) */
+button, a[role="button"], .touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Improved text readability on mobile */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Safe area insets for notched devices */
+@supports (padding: max(0px)) {
+  .pb-safe {
+    padding-bottom: max(var(--sab), env(safe-area-inset-bottom));
+  }
+  
+  .pt-safe {
+    padding-top: max(var(--sat), env(safe-area-inset-top));
+  }
+  
+  .px-safe {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Mobile-optimized scroll behavior */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Larger touch targets on mobile */
+  button, a, [role="button"] {
+    min-height: 48px;
+  }
+  
+  /* Better spacing on mobile */
+  .mobile-spacing {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  /* Maintain mobile-first design but allow better spacing */
+  .container-responsive {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  /* Optional: Add desktop-specific styles if needed */
+}
+
+/* Prevent text size adjustment on iOS */
+@media screen and (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+/* Improved focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #2ed5c4;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Prevent pull-to-refresh on mobile */
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* Smooth transitions for mobile interactions */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
